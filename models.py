@@ -14,10 +14,19 @@ class Cupcake(db.Model):
     flavor = db.Column(db.String, nullable=False)
     size = db.Column(db.String, nullable=False)
     rating = db.Column(db.Float, nullable=False)
-    image = db.Column(db.Text, nullable=False)
+    image = db.Column(db.Text, nullable=False, default=DEFAULT_IMG)
 
-    def image(self):
-        """defualt image for cupcake"""
+    def serialize(self):
+        """serialize cupcakes """
 
-        return self.image or DEFAULT_IMG
+        return {
+            "id": self.id,
+            "flavor": self.flavor,
+            "size": self.size,
+            "rating": self.rating,
+            "image": self.image,
+        }
 
+def connect_db(app):
+    db.app = app
+    db.init_app(app)
