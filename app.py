@@ -21,7 +21,7 @@ def index():
 def list_cupcakes():
     """Renders list of all cupcakes"""
 
-    all_cupcakes = [cupcake.to_dict() for cupcake in Cupcake.query.all()]
+    all_cupcakes = [cupcake.serialize() for cupcake in Cupcake.query.all()]
     return jsonify(cupcakes = all_cupcakes)
 
 @app.route('/api/cupcakes/<int:cupcake_id>')
@@ -38,7 +38,7 @@ def get_cupcake(cupcake_id):
     db.session.add(cupcake)
     db.session.commit()
 
-    return jsonify(cupcake = cupcake.to_dict())
+    return jsonify(cupcake = cupcake.serialize())
 
 @app.route('/api/cupcakes', methods=['POST'])
 def new_cupcake():
@@ -56,4 +56,4 @@ def new_cupcake():
     db.session.add(cupcake)
     db.session.commit()
 
-    return (jsonify(cupcake=cupcake.to_dict()), 201)
+    return (jsonify(cupcake=cupcake.serialize()), 201)
