@@ -2,13 +2,13 @@
 
 from flask_sqlalchemy import SQLAlchemy
 
-DEFAULT_IMG = "https://tinyurl.com/demo-cupcake"
-
 db = SQLAlchemy()
+
+DEFAULT_IMG = "https://tinyurl.com/demo-cupcake"
 
 class Cupcake(db.Model):
 
-    __tablename__ = 'cupcake'
+    __tablename__ = 'cupcakes'
 
     id = db.Column(db.Integer, primary_key=True)
     flavor = db.Column(db.String, nullable=False)

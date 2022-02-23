@@ -9,12 +9,36 @@
     <title>Cupcakes!</title>
 </head>
 <body>
-    <h1>Cupcakes List</h1>
-    <ul>
-        {% for cupcake in cupcakes %}
-        <li>{{cupcake.id}} - <button class="delete-cupcake" data-id="{{cupcake.id}}">X</button></li>
-        {% endfor %}
+    <h1>All the Cupcakes!</h1>
+    <ul id="cupcakes-list">
     </ul>
+
+    <h2>Add Cupcake!</h2>
+
+    <form id="add-cupcake-form">
+        <div class="form-group">
+            <label for="cupcake-flavor">Flavor:</label>
+            <input name="flavor" id="cupcake_flavor">
+        </div>
+
+        <div class="form-group">
+            <label for="cupcake-size">Size:</label>
+            <input name="size" id="cupcake_size">
+        </div>
+
+        <div class="form-group">
+            <label for="cupcake-rating">Rating:</label>
+            <input name="rating" id="cupcake_rating">
+        </div>
+
+        <div class="form-group">
+            <label for="cupcake-image">Image:</label>
+            <input name="image" id="cupcake_image">
+        </div>
+
+        <button class="btn btn-primary">Add</button>
+    </form>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="static/cupcakes.js"></script>
