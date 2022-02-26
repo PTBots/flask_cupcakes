@@ -1,5 +1,5 @@
-flask
-flask-sqlalchemy
-ipython
-psycopg2-binary
-sqlalchemy
+Flask==2.0.3
+Flask-SQLAlchemy==2.5.1
+ipython==8.0.1
+psycopg2-binary==2.9.3
+SQLAlchemy==1.4.31

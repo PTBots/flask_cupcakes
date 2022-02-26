@@ -1,0 +1,30 @@
+###
+GET http://127.0.0.1:5000/api/cupcakes
+
+###
+
+POST http://127.0.0.1:5000/api/cupcakes
+content-type: application/json
+
+{
+    "flavor": "strawberry",
+    "size": "comical",
+    "rating": 8,
+    "image": "https://picsum.phots/536/354"
+}
+
+###
+GET http://127.0.0.1:5000/api/cupcakes/
+
+
+###
+PATCH http://127.0.0.1:5000/api/cupcake/1
+content-type: application/json
+
+{
+    "flavor": "chocolate"
+}
+
+
+###
+DELETE http://127.0.0.1:5000/api/cupcake/7
